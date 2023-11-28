@@ -1,0 +1,39 @@
+:root {
+  --md-dark: #333;
+  --light: #e5e5e5;
+  --primary: #071621;
+  --accent: #126170;
+}
+
+body {
+  background-color: var(--md-dark);
+  color: var(--light);
+  margin: 0;
+}
+
+h1, h2, h3, p, ul, li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  padding: .6rem 2rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  border-radius: 9999px;
+  border-width: 2px;
+  border-style: solid;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.primary {
+  background-color: var(--primary);
+  color: var(--accent);
+}
+.accent {
+  background-color: var(--accent);
+  color: var(--primary);
+  border-color: var(--primary);
+}
