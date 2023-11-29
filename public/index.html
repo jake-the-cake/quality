@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="css/quiggle.css">
   <script src="dist/index.js"></script>
 </head>
-<body>
+<body class="flex-col jc-between ai-center">
   <header>
     <ul>
       <li><a href="/labels">Labels</a></li>
@@ -16,16 +16,20 @@
   </header>
   <main id="application">
     <h1>Label Station</h1>
-    <div class="flex gap-4 my-6 p-4 primary">
-      <button class="accent">Create New</button>
-      <button>Review & Print</button>
-      <button>Report Error</button>
-    </div>
-    <div class="flex gap-2">
-      <div class="border-dark border-1-solid p-4">
-        <span><a href="/labels/templates">Label Templates</a></span>
+    <div class="flex gap-4">
+      <div class="flex-col gap-4 my-6 p-4 primary">
+        <button class="accent">Create New</button>
+        <button class="light">Review & Print</button>
+        <button class="error">Report Error</button>
+      </div>
+      <div class="flex gap-2">
+        <div class="border-dark border-1-solid p-4">
+          <span><a href="/labels/templates">Label Templates</a></span>
+        </div>
       </div>
     </div>
+    <script src="dist/labels.js"></script>
   </main>
+  <footer>Footer</footer>
 </body>
 </html>

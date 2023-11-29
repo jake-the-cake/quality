@@ -1,14 +1,32 @@
 :root {
+  --primary-hue: 85;
+  --accent-hue: 200;
+  --secondary-hue: 200;
+  --error-hue: 0;
+  --warning-hue: 50;
+  --success-hue: 110;
+
+
   --md-dark: #333;
-  --light: #e5e5e5;
-  --primary: #071621;
-  --accent: #126170;
+  --light: 0, 0%, 95%;
+  --primary: var(--primary-hue), 100%, 40%;
+  --accent: var(--accent-hue), 100%, 40%;
+  --secondary: var(--secondary-hue), 100%, 40%;
+  --error: var(--error-hue), 100%, 40%;
+  --warning: var(--warning-hue), 100%, 40%;
+  --success: var(--success-hue), 100%, 40%;
 }
 
 body {
   background-color: var(--md-dark);
-  color: var(--light);
+  color: hsl(var(--light));
   margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
 }
 
 h1, h2, h3, p, ul, li {
@@ -18,6 +36,7 @@ h1, h2, h3, p, ul, li {
 }
 
 button {
+  --btn-bg: 0, 0%, 100%;
   padding: .6rem 2rem;
   font-size: 1.4rem;
   font-weight: 700;
@@ -26,14 +45,38 @@ button {
   border-style: solid;
   cursor: pointer;
   transition: all .3s ease;
+  background-color: hsl(var(--btn-bg), .8) !important;
+}
+
+button:hover {
+  background-color: hsl(var(--btn-bg)) !important;
+}
+
+.primary,
+.accent,
+.error,
+.warning,
+.success,
+.secondary,
+.dark,
+.light {
+  color: var(--light);
+  border-color: var(--light);
+  background-color: hsl(var(var(--btn-bg)));
+}
+
+.light {
+  --btn-bg: var(--light);
+  color: hsl(var(--primary)) !important;
+  border-color: var(--primary) !important;
 }
 
 .primary {
-  background-color: var(--primary);
-  color: var(--accent);
+--btn-bg: var(--primary)
 }
 .accent {
-  background-color: var(--accent);
-  color: var(--primary);
-  border-color: var(--primary);
+  --btn-bg: var(--accent);
+}
+.error {
+  --btn-bg: var(--error);
 }
