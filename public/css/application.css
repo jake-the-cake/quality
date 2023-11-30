@@ -1,28 +1,50 @@
 :root {
-  --primary-hue: 85;
-  --accent-hue: 200;
-  --secondary-hue: 200;
+  --primary-hue: 250;
+  --accent-hue: 310;
+  --secondary-hue: 190;
   --error-hue: 0;
-  --warning-hue: 50;
+  --warning-hue: 60;
   --success-hue: 110;
 
 
   --md-dark: #333;
+  --dark: 0, 0%, 8%;
   --light: 0, 0%, 95%;
   --primary: var(--primary-hue), 100%, 40%;
   --accent: var(--accent-hue), 100%, 40%;
   --secondary: var(--secondary-hue), 100%, 40%;
   --error: var(--error-hue), 100%, 40%;
-  --warning: var(--warning-hue), 100%, 40%;
+  --warning: var(--warning-hue), 100%, 50%;
   --success: var(--success-hue), 100%, 40%;
 }
 
+*,
+*::after,
+*::before { box-sizing: border-box;}
+
 body {
-  background-color: var(--md-dark);
+  background-color: hsl(var(--dark), .8);
   color: hsl(var(--light));
   margin: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   min-height: 100vh;
+  position: relative;
+}
+
+body::after {
+  content: '';
+  width: 375vw;
+  height: 150vw;
+  border-radius: 50%;
+  background-color: hsl(var(--primary));
+  outline: .3rem solid hsl(var(--accent));
+  box-shadow: 0 2px 15px 2px hsl(var(--light));
+  outline-offset: .1rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -140vw;
+  z-index: -1;
 }
 
 main {
@@ -35,8 +57,12 @@ h1, h2, h3, p, ul, li {
   margin: 0;
 }
 
+header {
+  height: 10vw;
+}
+
 button {
-  --btn-bg: 0, 0%, 100%;
+  --element-bg: 0, 0%, 100%;
   padding: .6rem 2rem;
   font-size: 1.4rem;
   font-weight: 700;
@@ -45,11 +71,11 @@ button {
   border-style: solid;
   cursor: pointer;
   transition: all .3s ease;
-  background-color: hsl(var(--btn-bg), .8) !important;
+  background-color: hsl(var(--element-bg), .8) !important;
 }
 
 button:hover {
-  background-color: hsl(var(--btn-bg)) !important;
+  background-color: hsl(var(--element-bg)) !important;
 }
 
 .primary,
@@ -62,21 +88,20 @@ button:hover {
 .light {
   color: var(--light);
   border-color: var(--light);
-  background-color: hsl(var(var(--btn-bg)));
+  background-color: hsl(var(var(--element-bg)));
 }
 
 .light {
-  --btn-bg: var(--light);
-  color: hsl(var(--primary)) !important;
-  border-color: var(--primary) !important;
+  --element-bg: var(--light);
+  color: hsl(var(--dark)) !important;
+  border-color: var(--dark) !important;
 }
 
-.primary {
---btn-bg: var(--primary)
-}
-.accent {
-  --btn-bg: var(--accent);
-}
-.error {
-  --btn-bg: var(--error);
-}
+.primary { --element-bg: var(--primary)}
+.secondary { --element-bg: var(--secondary);}
+.accent { --element-bg: var(--accent);}
+.error { --element-bg: var(--error);}
+.warning { --element-bg: var(--warning);}
+.success { --element-bg: var(--success);}
+.dark { --element-bg: var(--dark);}
+.light { --element-bg: var(--light);}
