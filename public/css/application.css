@@ -36,10 +36,10 @@ body::after {
   width: 375vw;
   height: 150vw;
   border-radius: 50%;
-  background-color: hsl(var(--primary));
-  outline: .3rem solid hsl(var(--accent));
+  background-color: hsl(var(--primary), .5);
+  outline: .3rem solid hsl(var(--accent), .5);
   box-shadow: 0 2px 15px 2px hsl(var(--light));
-  outline-offset: .1rem;
+  outline-offset: .15rem;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
