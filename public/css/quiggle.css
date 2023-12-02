@@ -11,6 +11,8 @@
   display: flex;
   flex-direction: column-reverse;
 }
+.f-1 { flex: 1;}
+.f-2 { flex: 2;}
 
 /* justify-content */
 .jc-center { justify-content: center;}
@@ -21,6 +23,7 @@
 .ai-center { align-items: center;}
 .ai-between { align-items: space-between;}
 .ai-around { align-items: space-around;}
+.ai-end { align-items: end;}
 
 /* gap */
 .gap-1 { gap: .25rem;}
@@ -34,6 +37,26 @@
 .gap-9 { gap: 2.25rem;}
 .gap-10 { gap: 2.5rem;}
 
+/* height */
+.h-0 { height: 0px;}
+.h-1 { height: .25rem;}
+.h-2 { height: .5rem;}
+.h-3 { height: .75rem;}
+.h-4 { height: 1rem;}
+.h-5 { height: 1.25rem;}
+.h-6 { height: 1.5rem;}
+.h-7 { height: 1.75rem;}
+.h-8 { height: 2rem;}
+.h-9 { height: 2.25rem;}
+.h-10 { height: 2.5rem;}
+
+/* width */
+.w-0 { width: 0px;}
+.w-25 { width: 25%;}
+.w-50 { width: 50%;}
+.w-screen { width: 100vw;}
+.w-100 { width: 100%;}
+
 /* MARGIN VARIATIONS */
 /* margin */
 .m-1 { margin: .25rem;}
@@ -46,6 +69,7 @@
 .m-8 { margin: 2rem;}
 .m-9 { margin: 2.25rem;}
 .m-10 { margin: 2.5rem;}
+.m-auto { margin: auto;}
 /* margin-top */
 .mt-1 { margin-top: .25rem;}
 .mt-2 { margin-top: .5rem;}
@@ -193,10 +217,48 @@
 .py-10 { padding-block: 2.5rem;}
 
 
-.border-dark {
-  border-color: black;
-}
-.border-1-solid {
+.b-dark { border-color: hsl(var(--dark));}
+.b-sm { border-width: 1px; border-style: solid;}
+.bb-sm { border-bottom-width: 1px; border-bottom-style: solid;}
+.b-md { border-width: 2px; border-style: solid;}
+.b-lg { border-width: 3px; border-style: solid;}
+.b-xl { border-width: 4px; border-style: solid;}
+
+
+
+/* overflow */
+.of-hidden { overflow: hidden;}
+
+.fit-x { width: fit-content;}
+.fit-y { height: fit-content;}
+
+/* position */
+.relative { position: relative;}
+.absolute { position: absolute;}
+
+.top-0 { top: 0;}
+.bottom-0 { bottom: 0;}
+
+.btn-sm {
+  padding: .3rem .8rem;
+  font-size: .7rem;
+  font-weight: 400;
   border-width: 1px;
-  border-style: solid;
+}
+
+.block { display: block;}
+.inline-block { display: inline-block;}
+
+.text-btn,
+.text-btn:hover {
+  padding: 0;
+  font-weight: 400;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  background-color: transparent !important;
+  border: none !important;
+  outline: none !important;
+}
+.text-xs {
+  font-size: .4rem;
 }

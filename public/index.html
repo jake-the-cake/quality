@@ -14,25 +14,75 @@
       <li><a href="/labels">Labels</a></li>
     </ul>
   </header>
-  <main id="application">
+  <main id="application" class="flex-col ai-center w-100">
     <script src="dist/labels.js"></script>
-    <h1>Label Station</h1>
-    <div class="flex gap-4">
-      <div class="flex-col gap-4 my-6 p-4 primary">
-        <button class="primary">Review & Print</button>
-        <button class="secondary">Review & Print</button>
-        <button class="accent">Create New</button>
-        <button class="success">Review & Print</button>
-        <button class="warning">Review & Print</button>
-        <button class="error">Report Error</button>
-        <button class="light">Review & Print</button>
-        <button class="dark">Review & Print</button>
-      </div>
-      <div class="flex gap-2">
-        <div class="border-dark border-1-solid p-4">
-          <span><a href="/labels/templates">Label Templates</a></span>
+    <section id="app-controls">
+      <h1>Label Station</h1>
+      <div class="flex gap-4">
+        <div class="flex gap-4 my-6">
+          <button value="create" class="primary">Create New</button>
+          <button value="review" class="primary sm">Review & Print</button>
+          <button value="report" class="error">Report Error</button>
         </div>
       </div>
+    </section>
+    <div id="create" class="flex gap-2">
+      <form class="flex-col gap-4 p-4 border-1-solid secondary w-100">
+        <div class="flex gap-4 ai-center">
+          <label for="template-search">Use Template:</label>
+          <select name="template-search" id="template-search" class="me-10 dark">
+            <option value="none">NO TEMPLATES FOUND</option>
+          </select>
+          <button value="label-templates" type="button" class="accent btn-sm">Add Template</button>
+        </div>
+        <div class="flex gap-4 jc-center">
+          <label for="labels-per-page">Per Page:</label>
+          <input type="number" id="labels-per-page" class="me-10 dark">
+          <button type="button" value="settings" class="text-btn">Advanced Settings</button>
+        </div>
+        <div class="light b-sm b-dark m-auto p-1 w-100 flex-col gap-3" id="label-view">
+          <div class="flex gap-2 jc-between ai-end">
+            <h2 class="me-4">REJECTED MATERIAL</h2>
+            <span>Date</span>
+            <div class="bb-sm b-dark f-1"></div>
+          </div>
+          <div class="flex gap-2 jc-bewteen">
+            <span>Item #</span>
+            <div class="bb-sm b-dark f-2"></div>
+            <span>Quantity</span>
+            <div class="bb-sm b-dark f-1"></div>
+          </div>
+          <div class="flex gap-2 jc-bewteen">
+            <span>Lot #</span>
+            <div class="bb-sm b-dark f-1"></div>
+            <span>Exp Date</span>
+            <div class="bb-sm b-dark f-1"></div>
+          </div>
+          <div class="flex gap-2">
+            <span>Reason</span>
+            <div class="bb-sm b-dark f-1"></div>
+          </div>
+          <div class="flex gap-2 ai-end">
+            <h3>X</h3>
+            <div class="bb-sm b-dark f-1"></div>
+            <div class="b-dark b-sm ms-10 px-4 pt-6 relative">
+              <span class="text-xs relative bottom-0">QC Initial</span>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div id="review" class="flex gap-2">
+      Review & Print
+    </div>
+    <div id="report" class="flex gap-2">
+      Report Error
+    </div>
+    <div id="settings" class="flex gap-2">
+      Advanced Label Settings
+    </div>
+    <div id="label-templates" class="flex gap-2">
+      Label Templates
     </div>
   </main>
   <footer>Footer</footer>
