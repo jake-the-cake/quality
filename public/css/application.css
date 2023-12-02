@@ -1,7 +1,7 @@
 :root {
-  --primary-hue: 250;
-  --accent-hue: 310;
-  --secondary-hue: 190;
+  --primary-hue: 30;
+  --accent-hue: 92;
+  --secondary-hue: 202;
   --error-hue: 0;
   --warning-hue: 60;
   --success-hue: 110;
@@ -10,8 +10,8 @@
   --md-dark: #333;
   --dark: 0, 0%, 8%;
   --light: 0, 0%, 95%;
-  --primary: var(--primary-hue), 80%, 40%;
-  --accent: var(--accent-hue), 70%, 40%;
+  --primary: var(--primary-hue), 70%, 45%;
+  --accent: var(--accent-hue), 80%, 25%;
   --secondary: var(--secondary-hue), 90%, 35%;
   --error: var(--error-hue), 100%, 40%;
   --warning: var(--warning-hue), 100%, 45%;
@@ -41,7 +41,7 @@ body::after {
   height: 150vw;
   border-radius: 50%;
   background-color: hsl(var(--primary), .7);
-  outline: .3rem solid hsl(var(--secondary), .3);
+  outline: .3rem solid hsl(var(--secondary), .8);
   box-shadow: 0 2px 15px 2px hsl(var(--light));
   outline-offset: .15rem;
   position: absolute;
@@ -53,6 +53,13 @@ body::after {
 
 main {
   flex: 1;
+  /* --element-bg: var(--accent), .2; */
+  background-image: linear-gradient(hsl(var(--accent)) 5%, hsl(var(--accent), .3) 25%);
+  margin: auto;
+  min-width: 50vw;
+  margin-top: -3rem;
+  border-radius: 1rem;
+  border: .3rem solid hsl(var(--secondary), .8);
 }
 
 h1, h2, h3, p, ul, li {
@@ -86,6 +93,13 @@ button {
 
 button:hover {
   background-color: hsl(var(--element-bg)) !important;
+}
+
+footer {
+  background-color: black;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
 }
 
 .primary,
