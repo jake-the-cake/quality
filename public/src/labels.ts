@@ -22,7 +22,23 @@ window.addEventListener('DOMContentLoaded', () => {
   // label!.style.height = (page.height - (page.gap * Number(perPage.value) / 2))/ (Number(perPage.value) / 2) + 'in'
 
   // console.log(label)
+  createLabels({} as any)
 })
+
+function createLabels(e: FormDataEvent): void {
+  // e.preventDefault()
+  const html = document.implementation.createHTMLDocument('Print Labels')
+  const link = document.createElement('link')
+  link.type = 'text/css'
+  link.rel = 'stylesheet'
+  link.href = 'css/quiggle.css'
+  html.head.appendChild(link)
+  console.log(html)
+  const label = document.getElementById('label-view')!
+  html.body.appendChild(label)
+  const w = window.open('about:blank')
+  w?.document.write(html.documentElement.outerHTML)
+}
 
 class SlidingElement extends HTMLElement {
   open(height: string, direction: string = 'height') { (this as any).style[direction] = height }
